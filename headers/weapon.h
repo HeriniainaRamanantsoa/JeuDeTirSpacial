@@ -3,16 +3,16 @@
 
 #include <vector>
 #include "bullet.h"
-#include "Position.h"
-#define BULLET_SPEED 2
+#include "position.h"
 
 class Weapon {
     private:
         int maxBullet;
+        int puissance;
         std::vector<Bullet> cartridge;
         Position position;
     public:
-        Weapon (int maxBullet,double x,double y);
+        Weapon (int puissance,int maxBullet,double x,double y);
         ~Weapon ();
         void reload ();
         Bullet shoot ();

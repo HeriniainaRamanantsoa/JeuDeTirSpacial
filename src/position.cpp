@@ -1,11 +1,12 @@
-#include "..headers/position.h"
+#include <iostream>
 #include <random>
+#include "../headers/position.h"
 
-Position::Position (double maxX, double maxY,double x,double y) {
-    this->maxX = maxX;
-    this->maxY = maxY;
-    this->x = x;
-    this->y = y;
+Position::Position (double x,double y) :
+maxX (DEFAULT_WIDTH),
+maxY (DEFAULT_HEIGHT),
+x (x),
+y (y) {
     std::cout << "position créée : (" << this->x << "," << this->y << ")" << std::endl; 
 }
 
@@ -32,10 +33,10 @@ void Position::set_position (double x,double y) {
     }
 }
 
-double Postion::get_x () {
+double Position::get_x () {
     return this->x;
 }
 
-double Postion::get_y () {
+double Position::get_y () {
     return this->y;
 }

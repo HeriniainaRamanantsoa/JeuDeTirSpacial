@@ -1,0 +1,11 @@
+#ifndef __CONSTANTS__
+#define __CONSTANTS__
+
+#define DEFAULT_WIDTH 600
+#define DEFAULT_HEIGHT 800
+#define PUISSANCE_WEAPON 2
+#define MAX_BULLET 10
+#define MAX_HEALTH_POINT 100
+#define PLAYER_VITESSE 2
+
+#endif

@@ -1,10 +1,12 @@
-#include "weapon.h"
+#include <iostream>
+#include "../headers/weapon.h"
 
-Weapon::Weapon (int maxBullet,double x,double y) {
-    this->maxBullet = maxBullet;
-    this->position.set_position (x, y);
-    for (int x(0);x < maxBullet;x++) {
-        Bullet bullet (x, y, BULLET_SPEED);
+Weapon::Weapon (int puissance,int maxBullet,double x,double y) :
+puissance (puissance),
+maxBullet (maxBullet),
+position (x,y) {
+    while (cartridge.size() < maxBullet) {
+        Bullet bullet (x, y, this->puissance * 1.5);
         this->cartridge.push_back (bullet);
     }
     std::cout << "arme créée" << std::endl;
@@ -16,10 +18,10 @@ void Weapon::reload () {
     double x = this->position.get_x ();
     double y = this->position.get_y ();
     while (this->cartridge.size() < this->maxBullet) {
-        Bullet bullet (x, y, BULLET_SPEED);
+        Bullet bullet (x, y, this->puissance * 1.5);
         this->cartridge.push_back (bullet);
     }
-    std::cout << "Cartouche rechargée" << std::endl;
+    std::cout << "Cartouche rechargée !! total minution : " << this->cartridge.size() << std::endl;
 }
 
 Bullet Weapon::shoot () {
@@ -28,6 +30,6 @@ Bullet Weapon::shoot () {
     }
     Bullet bullet = this->cartridge.back ();
     this->cartridge.pop_back ();
-    std::cout << "Tire effectué" << std::endl;
+    std::cout << "Tire effectué !! reste minutions : " << this->cartridge.size() << std::endl;
     return bullet;
 }

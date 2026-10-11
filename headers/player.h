@@ -5,6 +5,8 @@
 #include "position.h"
 #include "weapon.h"
 #include "bullet.h"
+#define MAX_X 600
+#define MAX_Y 600
 
 class Player {
 	private:
@@ -12,8 +14,9 @@ class Player {
         Position position;
         Weapon weapon;
         int healthPoints;
+        int vitesse;
     public:
-        Player ();
+        Player (std::string pseudo,double x,double y);
         ~Player ();
         void move_forward ();
         void move_backward ();
