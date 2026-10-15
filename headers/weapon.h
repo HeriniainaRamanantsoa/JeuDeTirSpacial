@@ -12,7 +12,7 @@ class Weapon {
         std::vector<Bullet> cartridge;
         Position position;
     public:
-        Weapon (int puissance,int maxBullet,double x,double y);
+        Weapon (double x,double y);
         ~Weapon ();
         void reload ();
         Bullet shoot ();

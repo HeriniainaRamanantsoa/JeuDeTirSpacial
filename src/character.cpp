@@ -3,7 +3,7 @@
 #include "../headers/constants.h"
 
 Character::Character (double x,double y) :
-weapon (PUISSANCE_WEAPON,MAX_BULLET,x,y),
+weapon (x,y),
 healthPoints (MAX_HEALTH_POINT),
 position (x,y),
 resistance (CHARACTER_RESISTANCE),
