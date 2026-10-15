@@ -13,7 +13,7 @@ class Position {
 		Position (double x,double y);
 		~Position ();
 		void generate_position ();
-		void set_position (double x, double y);
+		bool set_position (double x, double y);
         double get_x ();
         double get_y ();
 };

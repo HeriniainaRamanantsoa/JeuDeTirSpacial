@@ -22,15 +22,15 @@ void Position::generate_position () {
     std::cout << "position initialisée : (" << randomX << "," << randomY << ")" << std::endl;
 }
 
-void Position::set_position (double x,double y) {
+bool Position::set_position (double x,double y) {
     if (x >= 0 && x <= this->maxX && y >= 0 && y <= this->maxY) {
         this->x = x;
         this->y = y;
         std::cout << "position modifiée : (" << x << "," << y << ")" << std::endl;
+        return true;
     }
-    else {
-        std::cout << "position incorrecte : (" << x << "," << y << ")" << std::endl; 
-    }
+    std::cout << "position incorrecte : (" << x << "," << y << ")" << std::endl; 
+    return false;
 }
 
 double Position::get_x () {

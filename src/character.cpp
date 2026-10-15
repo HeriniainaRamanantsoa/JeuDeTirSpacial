@@ -17,32 +17,44 @@ void Character::move_forward () {
     double x = this->position.get_x ();
     double y = this->position.get_y ();
     y += this->vitesse;
-    this->position.set_position (x,y);
-    std::cout << "Caractère déplacé vers l'avant" << std::endl;
+    if (this->position.set_position (x,y)) {
+        std::cout << "Caractère déplacé vers l'avant" << std::endl;
+        return;
+    }
+    std::cout << "Le Caractère ne peut pas dépasser les limites du territoire" << std::endl;
 }
 
 void Character::move_backward () {
     double x = this->position.get_x ();
     double y = this->position.get_y ();
     y -= this->vitesse;
-    this->position.set_position (x,y);
-    std::cout << "Caractère déplacé vers l'arrière" << std::endl;
+    if (this->position.set_position (x,y)) {
+        std::cout << "Caractère déplacé vers l'arrière" << std::endl;
+        return;
+    }
+    std::cout << "Le Caractère ne peut pas dépasser les limites du territoire" << std::endl;
 }
 
 void Character::move_right () {
     double x = this->position.get_x ();
     double y = this->position.get_y ();
     x += this->vitesse;
-    position.set_position (x,y);
-    std::cout << "Caractère déplacé vers la droite" << std::endl;
+    if (position.set_position (x,y)) {
+        std::cout << "Caractère déplacé vers la droite" << std::endl;
+        return;
+    }
+    std::cout << "Le Caractère ne peut pas dépasser les limites du territoire" << std::endl;
 }
 
 void Character::move_left () {
     double x = this->position.get_x ();
     double y = this->position.get_y ();
     x -= this->vitesse;
-    position.set_position (x,y);
-    std::cout << "Caractère déplacé vers la gauche" << std::endl;
+    if (position.set_position (x,y)) {
+        std::cout << "Caractère déplacé vers la gauche" << std::endl;
+        return;
+    }
+    std::cout << "Le Caractère ne peut pas dépasser les limites du territoire" << std::endl;
 }
 
 Bullet Character::shoot () {
