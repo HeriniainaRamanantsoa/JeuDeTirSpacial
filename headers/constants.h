@@ -7,5 +7,9 @@
 #define MAX_BULLET 10
 #define MAX_HEALTH_POINT 100
 #define PLAYER_VITESSE 2
+#define ENEMI_VITESSE 1
+#define CHARACTER_VITESSE 1
+#define MAX_X 600
+#define MAX_Y 600
 
 #endif
