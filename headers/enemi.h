@@ -1,22 +1,12 @@
 #ifndef __ENEMI__
 #define __ENEMI__
 
-#include "position.h"
-#include "weapon.h"
+#include "character.h"
 
-class Enemi {
-    private:
-        Position position;
-        Weapon weapon;
-        int healtPoints;
-        int vitesse;
+class Enemi : public Character {
     public:
-        Enemi ();
+        Enemi (double x,double y);
         ~Enemi ();
-        void move_forward ();
-        void move_backward ();
-        void move_right ();
-        void move_left ();
-}
+};
 
 #endif

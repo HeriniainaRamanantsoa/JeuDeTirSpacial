@@ -2,13 +2,11 @@
 #define __CHARACTER__
 
 #include "position.h"
+#include "bullet.h"
 #include "weapon.h"
-#include "bullet.h";
-#define MAX_X 600
-#define MAX_Y 600
 
 class Character {
-    private:
+    protected:
         Position position;
         Weapon weapon;
         int resistance;
